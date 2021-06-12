@@ -1,0 +1,65 @@
+<section class="login-signup-section">
+    <div class="container-fluid padd-lt-rt-0">
+        <div class="col-md-6 padd-lt-rt-0 login-cont">
+            <!-- <img src="../../../assets/images/about_rt_img2.jpg" alt=""> -->
+            <div class="login-signup-img" id="slide1" [style.backgroundImage]="'url(../../assets/images/slide3.jpg)'"></div>
+            <!-- <div class="login-signup-img fadeOut" id="slide2" [style.backgroundImage]="'url(../../assets/images/slide2.jpg)'"></div>
+            <div class="login-signup-img fadeOut" id="slide3" [style.backgroundImage]="'url(../../assets/images/slide3.jpg)'"></div> -->
+        </div>
+        <div class="col-md-6 padd-lt-rt-0 center-postion">
+            <div class="login-signup-container">
+
+                <!-- Login signup title -->
+                <div class="login-signup-header">
+                <!-- <h4>Welocome To</h4> -->
+                <a href="#"><img src="../../../assets/images/logo.png" alt=""></a>
+                <div class="login-signup-title">
+                    <p>Log in to get in the momnent updates on the things that interest you.</p>
+                </div>
+                </div>
+                <!-- Login signup title End-->
+                
+                <!-- Login form -->
+                <div class="login-sign-form-section">
+                    <form class="login-sign-form" (submit)="logIn(userLogin)" #userLogin="ngForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email ID" name="email" ngModel #emailInput="ngModel" class="form-control">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" name="password"  ngModel #passwordInput="ngModel" class="form-control">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="login-sign-form-btn">
+                            <button class="btn logn-btn" type="submit">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Login form End-->
+
+                <!-- Sign up link -->
+                <div class="signup-link">
+                <p>Don't have an account ? <a routerLink="/auth/signup">Sign Up Now</a></p>
+                </div>
+                <!-- End -->
+
+                <!-- line break -->
+                <!-- <div class="border-login-or">Or</div> -->
+                <!-- Line break end -->
+
+                <!-- Sign another account -->
+                <!-- <div class="login-another-way">
+                    <h4>Continue with social media</h4>
+                    <div class="login-social-account">
+                        <a href="#" class="fb-link"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a>
+                        <a href="#" class="twit-link"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
+                        <a href="#" class="gmail-link"><i class="fa fa-google" aria-hidden="true"></i> Gmail</a>
+                    </div>
+                </div> -->
+                <!-- Sign another account end -->
+
+            </div>
+        </div>
+    </div>
+</section>
+

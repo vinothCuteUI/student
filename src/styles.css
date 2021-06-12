@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  background-color: #f3f2ef;
+  font-size: 1.2rem;
+}
+a,
+p,
+span,
+li,
+label {
+  font-size: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.8rem;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+}
+ul {
+  margin: 0;
+  /* padding: 0; */
+}
+ul li {
+  /* list-style-type: none; */
+  margin-bottom: 10px;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-group > p {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+}
+form .form-group .form-control {
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: solid 1px #ccc;
+}
+form .form-group .form-control:focus {
+  outline: 0;
+}
+button,
+.btn {
+  font-size: 1.4rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+button:focus,
+button:active,
+.btn:focus,
+.btn:active {
+  outline: 0;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.main {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+.br-rt {
+  border-right: solid 1px #eee;
+}
+
+@media (min-width: 1200px) {
+  .w-230 {
+    width: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .w-230 {
+    width: 240px;
+  }
+}
+
+/* .page-container{
+    margin-top:70px;
+} */
+mat-spinner {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+}
+.mat-progress-spinner svg {
+  width: 50px !important;
+  height: 50px !important;
+}

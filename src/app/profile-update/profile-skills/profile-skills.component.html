@@ -1,0 +1,28 @@
+<!-- Skills sets -->
+<div class="profile-update-sec " [class.active-skills-edite]="skillsSet">
+    
+    <div class="edite-profile-title technical-form">
+        <h3>Skills </h3>
+        <button class="btn close-btn" (click)="CloseSkills()">X</button>
+        <form >
+            <div class="form-group">
+                <label for="technical">Enter Technical Skill* </label>
+                <input type="text" class="form-control" 
+                placeholder="Ex: Html5" id="technical" 
+                #setskill
+                (keyup.enter)="addSkills($event)" >
+                <ul class="skillsSet">
+                    <li class="skillsList" 
+                    *ngFor="let skills of getSkillsValue; let i = index"
+                    (click)=removeSkill(i)>{{skills}} <i class="fa fa-check" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+            
+        </form>
+        <div class="form-group profile-title-btn">
+            <button class="btn btn-primary" *ngIf="skillMode == 'create'" (click)="onAddSkills()">Save</button>
+            <button class="btn btn-primary" *ngIf="skillMode == 'edit'" (click)="onEditSkills()">Update</button>
+        </div>
+    </div>
+
+</div>

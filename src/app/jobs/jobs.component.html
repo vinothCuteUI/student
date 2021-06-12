@@ -1,0 +1,77 @@
+<headernave *ngIf="userIsAuthenticated"></headernave>
+<div class="section-img-bar">
+</div>
+
+<!-- Job Title -->
+<div class="container profile-main jobs-main" >
+    
+    <div class="jobs-container">
+        
+        <div class="row">
+            <div class="col-sm-5 job-tab-container">
+                <div class="jobs-list-tab br-rt">
+                    
+                    <div class="jobs-lists" *ngFor="let jobslist of getPostJobs; let i = index" 
+                    [attr.data-index]="i" (click)="onJobDetail(i, jobslist.id)" [class.active-jobs]="i === 0">
+                        <div class="jobs-img-title">
+                            <img [src]="jobslist.jobTitleImg" alt="">
+                        </div>
+                        <div class="jobs-content">
+                            <div class="jobs-entity-title">
+                                <h2>{{jobslist.jobTitle}}</h2> 
+                                <h3>{{jobslist.companyName}}</h3>
+                                <ul>
+                                    <li>{{jobslist.jobLocation}}</li>
+                                </ul>
+                                <h4><b>Job Type:</b> {{jobslist.jobType}}</h4>
+                                <h5><i class="fa fa-clock-o" aria-hidden="true"></i> {{jobslist.createPost | postDays}}</h5>
+                            </div>
+                            
+                        </div>
+                        <div *ngIf="userIsAuthenticated && userId === jobslist.creator" class="jobs-action-btns">
+                            <button class="btn job-delete" (click)="onDeleteJob(jobslist.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button class="btn job-edit" [routerLink]="['/postjobsedit', jobslist.id]"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <!--- Jobs details section ---->
+            <div class="col-sm-7">
+                <div class="jobs-details-section" 
+                *ngFor="let jobdetails of viewJobData; let i = index" [class.active-detals]="i === 0">
+                    
+                    <div class="jobs-details-title" >
+                        <div class="jobs-img-title">
+                            <img [src]="jobdetails.jobTitleImg" alt="">
+                        </div>
+                        <div class="jobs-content">
+                            <div class="jobs-entity-title">
+                                <h2>{{jobdetails.jobTitle}}</h2> 
+                                <h3>{{jobdetails.companyName}}</h3>
+                                <ul>
+                                    <li>{{jobdetails.jobLocation}}</li>
+                                </ul>
+                                
+                                <h4><i class="fa fa-clock-o" aria-hidden="true"></i> {{jobdetails.createPost | postDays}}</h4>
+                                <div class="jobs-apply">
+                                    <button class="btn apply-btn">Apply <i class="fa fa-share-square-o" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="jobs-details-content" [innerHTML]="jobdetails.jobDescription">
+                        <!-- {{jobdetails.jobDescription}} -->
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>

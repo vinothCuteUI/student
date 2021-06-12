@@ -1,0 +1,214 @@
+<section class="page-wrapper">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">List jobs</li>
+        </ol>
+    </nav>
+    <div class="title-dashbard">
+        <h2>Create Jobs</h2>
+       
+    </div>
+    <div class="main-content-wrapper ">
+        <div class="main-content-body">
+            
+            <div class="main-inner-cont">
+                <form [formGroup]="jobsForm" class="create-jobs-form" >
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="">Job Title</label>
+                                <input formControlName="jobTitle" 
+                                type="email" placeholder="Ex.PHP Developer" class="form-control" id="" required>
+                                <p *ngIf="jobsForm.get('jobTitle').invalid  && (jobsForm.get('jobTitle').dirty || jobsForm.get('jobTitle').touched)">
+                                    Please enter job Title...</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div >
+                                    <label class="d-block">Choose list of Relevant Departments
+                                        
+                                    </label>
+                                </div>
+                                
+        
+                                <div class="form-check checkbox-inline " *ngFor="let dg of listDigree">
+                                    <input class="form-check-input digCheckbox" 
+                                    (change)="onChangeDigree(dg.digNm, $event.target.checked)" 
+                                    name="{{ dg.digNm }}" type="checkbox" id="{{dg.id}}" [value]="dg.digNm" [checked]="dg.id === 'digr01'">
+                                    <label class="form-check-label" for="{{dg.id}}">
+                                        {{dg.digNm}}
+                                    </label>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="">Work Location </label>
+                                <input formControlName="jobLocation" type="text" 
+                                placeholder="Ex.Chennai" class="form-control" id="" required>
+                                <p *ngIf="jobsForm.get('jobLocation').invalid  && (jobsForm.get('jobLocation').dirty || jobsForm.get('jobLocation').touched)">
+                                    Please enter Work Location...!</p>
+                            </div> 
+                            <div class="form-group">
+                                <label>Date & Time</label>
+                                <div class="input-group date">
+                                    
+                                  
+                                        <input formControlName="interviewDate" class="form-control" 
+                                        matInput [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                  
+                                    <p *ngIf="jobsForm.get('interviewDate').invalid  && (jobsForm.get('interviewDate').dirty || jobsForm.get('interviewDate').touched)">
+                                        Please enter Date & Time...!</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Primary Skills <span>( Seperate each skill by comma )</span></label>
+                                <input formControlName="primarySkills"
+                                type="text" placeholder="Ex.PLC" class="form-control" id="" required>
+                                
+                                <p *ngIf="jobsForm.get('primarySkills').invalid  && (jobsForm.get('primarySkills').dirty || jobsForm.get('primarySkills').touched)">
+                                    Please enter Skills...!</p>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label class="d-block">Spoken language fluency</label>
+                                </div>
+                        
+                                <div class="form-check checkbox-inline" *ngFor="let lng of languages">
+                                    <input class="form-check-input" 
+                                    (change)="onChangeLng(lng.lngNm, $event.target.checked)"
+                                    name="{{ lng.lngNm }}" type="checkbox" id="{{lng.id}}" [checked]="lng.id == 'lng01'">
+                                    <label class="form-check-label" for="{{lng.id}}" >
+                                        {{lng.lngNm}}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label class="d-block">Have standing arrears?</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input formControlName="standingArrears" 
+                                    type="radio" id="arrearsNo" name="standingArrears"  
+                                    class="custom-control-input" value="No" checked>
+                                    <label class="custom-control-label" for="arrearsNo">No</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input formControlName="standingArrears"
+                                    type="radio" id="arrearsYes"  name="standingArrears" 
+                                    class="custom-control-input" value="Yes" >
+                                    <label class="custom-control-label" for="arrearsYes">Yes</label>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="" class="d-block">Gender</label>
+                                </div>
+                                
+                                <div class="radio-inline">
+                                    <input formControlName="gender"
+                                    type="radio" id="rd_0" name="gender" 
+                                    class="custom-control-input" value="Every One" checked>
+                                    <label class="custom-control-label" for="rd_0" >Every One</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input formControlName="gender"
+                                    type="radio" id="rd_1" name="gender" 
+                                    class="custom-control-input" value="Male">
+                                    <label class="custom-control-label" for="rd_1" >Male</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input formControlName="gender" 
+                                    type="radio" id="rd_2" name="gender" 
+                                    class="custom-control-input" value="Female">
+                                    <label class="custom-control-label" for="rd_2">Female</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input formControlName="gender" 
+                                    type="radio" id="rd_3" name="gender" class="custom-control-input" value="Transgender">
+                                    <label class="custom-control-label" for="rd_3">Transgender</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Job Opening Validity period</label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input formControlName="jobValPrFrom" name="jobValPrFrom" 
+                                        type="text" placeholder="From" class="form-control" id="">
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input formControlName="jobValPrTo" name="jobValPrTo"
+                                        type="text" placeholder="To" class="form-control" id="">
+                                        
+                                    </div>
+                                </div>
+                                <p *ngIf="(jobsForm.get('jobValPrFrom').invalid || jobsForm.get('jobValPrTo').invalid)  
+                                && (jobsForm.get('jobValPrFrom').dirty || jobsForm.get('jobValPrFrom').touched) && (jobsForm.get('jobValPrTo').dirty || jobsForm.get('jobValPrTo').touched)  ">
+                                    Please enter Validity period From & To...!</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Gross pay per annum</label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input formControlName="grossPayMin" name="grossPayMin"
+                                        type="text" placeholder="Min" class="form-control" id="">
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input formControlName="grossPayMax" name="grossPayMax" 
+                                        type="text" placeholder="Max" class="form-control" id="">
+                                        
+                                    </div>
+                                </div>
+                                <p *ngIf="(jobsForm.get('grossPayMin').invalid || jobsForm.get('grossPayMax').invalid)  
+                                && (jobsForm.get('grossPayMin').dirty || jobsForm.get('grossPayMin').touched) && (jobsForm.get('grossPayMax').dirty || jobsForm.get('grossPayMax').touched)  ">
+                                    Please enter Gross pay Min & Max...!</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Job Description</label>
+                                <textarea formControlName="jobDescription" 
+                                class="form-control msg-box" id="exampleFormControlTextarea1" rows="4">Form description will go here.if any</textarea>
+                                <p *ngIf="jobsForm.get('jobDescription').invalid  && (jobsForm.get('jobDescription').dirty || jobsForm.get('jobDescription').touched)">
+                                    Please enter job Description...!</p>
+                            </div>
+                            <button class="btn btn-primary" (click)="onAddJobs()">Create Post</button>
+                        </div>
+                    </div>              
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Post Jobs</h4>
+        </div>
+        <div class="modal-body">
+          <p>Job Posted Successfully and waiting for approvel...</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="onCloseMsg()" >Okay</button>
+        </div>
+      </div>
+      
+    </div>
+</div>

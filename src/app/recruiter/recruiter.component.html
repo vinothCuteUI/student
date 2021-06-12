@@ -1,0 +1,25 @@
+<headernave></headernave>
+<div class="recruiter-dasboard">
+    <div class="sidemenu-container">
+        
+        <ul class="sidebar">
+            <li>
+                <a [routerLink]="'/recruiter/dashboard'">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <span>Dasboard</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="'/recruiter/listjobs'">
+                    <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                    <span>Job Post</span>
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="recruiter-container">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>

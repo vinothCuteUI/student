@@ -1,0 +1,102 @@
+.login-signup-section{
+    position: relative;
+    z-index: 10000;
+    background-color: #f5f5f5;
+}
+.add-candidates{
+    margin-top: 70px;
+    padding-bottom: 80px;
+}
+.create-forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.add-details-form{
+    width: 35%;
+    height: 85vh;
+    background-color:#fff;
+    padding: 20px 15px;
+    overflow-y: scroll;
+    /* transform: translate(0, 6%); */
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #999;
+}
+/* width */
+.add-details-form::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+.add-details-form::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+.add-details-form::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+}
+
+/* Handle on hover */
+.add-details-form::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.form-title h3{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #cccc;
+}
+.add-details-form form .form-group label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #212529;
+}
+.add-details-form form .form-group .form-control{
+    height: 28px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    /* background-color: #e8e8e8; */
+    border: solid 1px #dadada;
+    border-radius: 5px;
+    /* background-color: #eee; */
+}
+.add-details-form form .form-btn{
+    text-align: left;
+}
+.form-btn .adddetails-btn{
+    font-size: 15px;
+    display: inline-block;
+    background-color: #f36a2c;
+    color: #fff;
+    border: solid 1px #f36a2c;
+    padding: 10px 30px;
+    margin: 10px 0;
+    border-radius: 25px;
+    line-height: 15px;
+    box-shadow: 0 1px 6px #ccc;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+.form-btn .adddetails-btn:hover{
+    background-color: transparent;
+    color: #f36a2c;
+}
+.add-details-form form .form-group textarea.form-control{
+    height: 80px;
+    resize: none;
+}
+.profile-title-btn{
+    text-align: center;
+}
+.profile-title-btn .btn{
+    border-radius: 25px;
+    padding: 5px 45px;
+}
+.profile-title-btn .btn:focus{
+    outline: 0;
+}

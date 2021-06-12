@@ -1,0 +1,138 @@
+<headernave *ngIf="userIsAuthenticated"></headernave>
+<div class="container profile-main main" >
+    
+    <div class="row">
+        
+        <div class="col-sm-9">
+            <div class="jobs-post-section">
+                <div class="jobs-post-title">
+                    <h2>Add Job Details</h2>
+                </div>
+                <form [formGroup]="jobsForm">
+                    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="job-title-img">
+                                <img class="profile-picture" *ngIf="logoPreview !== '' && logoPreview"
+                                [src]="logoPreview" 
+                                alt="" >
+                            </div>
+                            <div class="upload-logo">
+                                <button class="btn upload-btn"  (click)="filepicker.click()" >
+                                    <span  *ngIf="!isLogoActive">Add Logo</span>   
+                                    <span *ngIf="isLogoActive">Edit logo</span> 
+                                </button>
+                                <input id="input-logo" type="file" #filepicker (change)="onAddLogo($event)" />
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="jobtitle">Job Title *</label>
+                                <input type="text" 
+                                class="form-control" id="jobtitle" 
+                                formControlName="jobtitle"
+                                placeholder="Ex: Frontend developer.." #jobTitle>
+                                <p *ngIf="jobsForm.get('jobtitle').invalid  && (jobsForm.get('jobtitle').dirty || jobsForm.get('jobtitle').touched)">
+                                    Please enter Job title...</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="company">Company *</label>
+                                <input type="text" 
+                                class="form-control" id="company" 
+                                formControlName="company"
+                                placeholder="Enter Your Company Name..">
+                                <p *ngIf="jobsForm.get('company').invalid  && (jobsForm.get('company').dirty || jobsForm.get('company').touched)">Please enter company name...</p>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="joblocation">Job Location *</label>
+                                <input type="text" 
+                                class="form-control" id="joblocation" 
+                                formControlName="joblocation"
+                                placeholder="Enter Location..">
+                                <p *ngIf="jobsForm.get('joblocation').invalid  && (jobsForm.get('joblocation').dirty || jobsForm.get('joblocation').touched)">Please job location...</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="jobtype">Employment Type *</label>
+                                <select class="form-control" formControlName="jobtype" id="jobtype" placeholder="Employment type">
+                                    <!-- <option value="Null">-</option> -->
+                                    <option value="Full Time">Full Time</option>
+                                    <option value="Part Time">Part Time</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Internship">Internship</option>
+                                </select>
+                                <p *ngIf="jobsForm.get('jobtype').invalid  && (jobsForm.get('jobtype').dirty || jobsForm.get('jobtype').touched)">Please enter job type...</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="job-description">
+                                <div class="edit-toolbar">
+                                    <button (click)="format('bold')"><i class="fa fa-bold" aria-hidden="true"></i></button>
+                                    <button (click)="format('italic')"><i class="fa fa-italic" aria-hidden="true"></i></button>
+                                    <button (click)="format('insertunorderedlist')"><i class="fa fa-list" aria-hidden="true"></i></button>
+                                    <button (click)="format('insertorderedlist')"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
+                                    <button (click)="format('underline')"><i class="fa fa-underline" aria-hidden="true"></i></button>
+                                    <!-- <button (click)="setUrl()"><span class="fa fa-link fa-fw"></span></button> -->
+                                    
+                                </div>
+                            
+                                <div class="job-content" id="jobContent" contenteditable="true" >
+                                    <p>Please enter job details here (More than 100 words)...</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="requestEmail">Please add your request received Email ID:</label>
+                                <input type="email" id="requestEmail" formControlName="email"
+                                class="form-control" name="requestEmail" placeholder="Email ID" >
+                                <p *ngIf="jobsForm.get('email').invalid  && (jobsForm.get('email').dirty || jobsForm.get('email').touched)">Please enter valide Email ID...</p>
+                            </div>
+                           
+                        </div>
+                        <div class="col-sm-12">
+                            <button class="btn btn-primary job-post-btn" (click)="onAddJobs()" *ngIf="mode === 'create'">Post Now</button>
+                            <button class="btn btn-primary job-post-btn" (click)="onUpdateJobs()" *ngIf="mode === 'edit'">Update Post</button>
+                            <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+                            <!-- <span class="update-msg" *ngIf="isSuccess">Post Job Updated Successfully....</span> -->
+                        </div>
+                    </div>
+
+                       
+                </form>
+
+            </div>
+        </div>
+
+     
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Post Jobs</h4>
+        </div>
+        <div class="modal-body">
+          <p>Job Post Successfully...</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="onCloseMsg()" >Close</button>
+        </div>
+      </div>
+      
+    </div>
+</div>

@@ -1,0 +1,152 @@
+
+.profile-update-sec{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color:rgb(0 0 0 / 64%);
+    z-index: 999;
+}
+.profile-update-sec.active-edite{
+    display: block;
+}
+
+.profile-bnr-upt{
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px 15px;
+}
+.profile-bnr-upt h3{
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #cccccc;
+}
+.close-btn{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 20px;
+    border:none;
+    border-radius: 0;
+    background-color: transparent;
+}
+.close-btn:focus{
+    outline: 0;
+}
+
+/* ------ Profile title edite ------- */
+
+.edite-profile-title{
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    width: 50%;
+    height: 420px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px 15px;
+    transform: translateX(-50%);
+}
+.active-profile-title{
+    display: block;
+}
+/* width */
+.edite-profile-title::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.edite-profile-title::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+.edite-profile-title::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+.edite-profile-title::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.edite-profile-title > h3{
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #ccc;
+}
+.edite-profile-title .form-group label{
+    font-size: 14px;
+    font-weight: 400;
+}
+.edite-profile-title .form-group .form-control{
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+#objectives{
+    height: 130px;
+    resize: none;
+}
+.edite-profile-title .form-group.profile-title-btn{
+    text-align: right;
+}
+.edite-profile-title .form-group .btn{
+    border-radius: 25px;
+    padding: 5px 25px;
+    font-size: 14px;
+    margin: 10px 5px 5px 5px;
+}
+.edite-profile-title .form-group .btn:focus{
+    outline: 0;
+}
+
+/*--------- Skill edit section ------ */
+.active-skills-edite{
+    display: block;
+}
+.active-skills-edite .technical-form{
+    height: 290px;
+}
+#technical{
+    height: 40px;
+    resize: none;
+}
+#technicalValue{
+    display: block;
+    height: 100px;
+}
+.skillsSet {
+    margin-top: 15px;
+}
+.skillsSet .skillsList{
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    background-color: #048006;
+    border-radius: 25px;
+    padding: 3px 25px 3px 20px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.skillsSet .skillsList i{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 12px;
+    margin-left: 5px;
+}

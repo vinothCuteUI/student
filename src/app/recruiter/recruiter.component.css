@@ -1,0 +1,55 @@
+.recruiter-dasboard{
+    display: flex;
+    height: 100vh;
+    padding-top: 60px;
+    background-color:#fdfdfd;
+}
+.btn{
+    padding: 7px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+}
+.btn-primary{
+    background: #3267F0;
+}
+/* -------------- Side menu ------------- */
+.sidemenu-container{
+    width: 100px;
+    background-color:#5b2d91;
+}
+.sidemenu-container .sidebar{
+    padding: 0;
+    list-style: none;
+}
+.sidemenu-container .sidebar li{
+    margin-bottom: 0;
+}
+.sidemenu-container .sidebar li a{
+    display: block;
+    color: #ae8fd2;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px 10px;
+    border-bottom: solid 1px #6a4494;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.sidemenu-container .sidebar li a i{
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.sidemenu-container .sidebar li a span{
+    display: block;
+}
+.sidemenu-container .sidebar li a:hover{
+    color: #fff;
+}
+.recruiter-container{
+    height: 90vh;
+    flex-grow: 1;
+    padding: 0 20px;
+    overflow-y: auto;
+}

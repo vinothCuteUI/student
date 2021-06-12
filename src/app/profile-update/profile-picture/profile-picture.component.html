@@ -1,0 +1,32 @@
+<div class="profile-update-sec" [class.active-edite]="isActivePicture">
+    <!-- Banner update start -->
+    <div class="profile-picture-upt" >
+        <h3>Profile Picture</h3>
+        <button class="btn close-btn" (click)="CloseEditPicture()">X</button>
+        <div class="picture-img" >
+            <div class="inner-img" *ngIf="picturePreview !== '' && picturePreview">
+                <img [src]="picturePreview" alt="">
+            </div>
+            <div class="inner-img" *ngIf="picturePreview == undefined">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="picture-update-btn">
+            <form [formGroup]="form">
+                <div class="upload-btn-sec">
+                    <button class="btn btn-primary upload-btn"  (click)="filepicker.click()" >
+                        <span  *ngIf="imagePicture">Change</span>   
+                        <span *ngIf="!imagePicture">Upload Picture</span> 
+                    </button>
+                    <input id="picture-upload" type="file" #filepicker (change)="onImagePicke($event)" />
+                </div>
+                <button class="btn btn-primary" (click)="onAddPicture()" *ngIf="pictureMode == 'create'">Save</button>
+                <button class="btn btn-primary" (click)="onEditPicture()" *ngIf="pictureMode == 'edit'">Update</button>
+                
+            </form>
+            
+        </div>
+    </div>
+    <!-- Banner update end -->
+
+</div>

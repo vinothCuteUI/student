@@ -1,0 +1,36 @@
+<div class="profile-update-sec" [class.active-edite]="isActiveEdite">
+    <!-- Banner update start -->
+    <div class="profile-bnr-upt" >
+        <h3>Profile banner</h3>
+        <button class="btn close-btn" (click)="CloseEditBnr()">X</button>
+        <div class="bnr-img" >
+            <div class="inner-img" [style.backgroundImage]="'url('+ imagePreview +')'" *ngIf="imagePreview !== '' && imagePreview">
+
+            </div>
+            <!-- <div class="upload-btn-sec" *ngIf="!imageBnr">
+                <button class="btn btn-primary upload-btn"  (click)="filepicker.click()">
+                    Upload bg Picture
+                </button>
+                <input id="bnr-upload" type="file" #filepicker (change)="onImagePicke($event)" />
+            </div> -->
+        </div>
+        <div class="bnr-update-btn">
+            <form [formGroup]="form" >
+                
+                <div class="upload-btn-sec">
+                    <button class="btn btn-primary upload-btn"  (click)="filepicker.click()" >
+                        <span  *ngIf="imageBnr">Change</span>   
+                        <span *ngIf="!imageBnr">Upload bg Picture</span> 
+                    </button>
+                    <input id="bnr-upload" type="file" #filepicker (change)="onImagePicke($event)" />
+                </div>
+                <button class="btn btn-primary" (click)="onAddBnr()" *ngIf="bnrMode == 'create'">Save</button>
+                <button class="btn btn-primary" (click)="onEditeBnr()" *ngIf="bnrMode == 'edit'">Update</button>
+                
+            </form>
+            
+        </div>
+    </div>
+    <!-- Banner update end -->
+
+</div>

@@ -1,0 +1,471 @@
+/* .profile-main{
+    margin-top: 100px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+} */
+/* .userprofile-container{
+    background-color: #ffffff;
+} */
+.userprofile-container .userprofile-header{
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 2px #999;
+    border-radius: 5px;
+}
+.userprofile-header > .userprofile-banner{
+    width: 100%;
+    height: 200px;
+    background-color: #337ab7;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.userprofile-banner .inner-bg{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.userprofile-banner .add-banr{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    padding: 0px;
+    margin: 0;
+    color: #000;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #555;
+    cursor: pointer;
+}
+.userprofile-banner .add-banr:focus{
+    outline: 0;
+}
+.userprofile-banner .banner-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: none;
+}
+.userprofile-banner .banner-btn input[type="file"] {
+    display: none;
+}
+.userprofile-banner .banner-btn .bnr-pictr {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    padding: 6px 12px;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid #337ab7;
+    background-color: #337ab7;
+    cursor: pointer;
+}
+.userprofile-header > .userprofile-banner:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0));
+}
+
+/* ------- User title section --------- */
+.userprofile-header .userprofile-title{
+    position: absolute;
+    left: 0;
+    bottom: -52px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 30px;
+}
+.userprofile-title > .userprofile-picture{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border:solid 3px #ffffff;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+.picture-temp i{
+    font-size: 70px;
+    color: #ccc;
+}
+.profilepicture-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.4rem;
+    background-color: rgb(0 0 0 / 75%);
+    text-align: center;
+    /* padding: 5px 5px; */
+}
+.profilepicture-btn button {
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    
+}
+.userprofile-title > .userprofile-picture .profile-picture{
+    width: 100%;
+    height: auto;
+}
+.userprofile-title > .userprofile-title-details{
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding:15px 0 0 20px;
+}
+.user-title-info{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.user-title-info h2{
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+.user-title-info h2 span{
+    font-size: 1.4rem;
+}
+.user-title-info h3{
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+.user-title-info p{
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+.user-title-info p span.expr-spn{
+    margin-right: 5px;
+}
+.user-title-info p span.loca-spn{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.user-title-info p span.loca-spn i{
+    margin-right: 5px;
+}
+.userprofile-contact-info ul{
+    padding: 0;
+}
+.userprofile-contact-info ul li {
+    list-style-type: none;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.userprofile-contact-info ul li.mobile-no i{
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+
+
+
+/* ----- User profile summary ---- */
+.userprofile-title-content{
+    background-color: #ffffff;
+    padding: 50px 30px 20px;
+    box-shadow: 0px 0px 2px #999;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.userprofile-title-content > p {
+    margin-bottom: 10px;
+}
+.userprofile-title-content .userprofile-edit-btn{
+    font-size: 15px;
+    display: inline-block;
+    background-color: #5b2d92;
+    color: #fff;
+    border: solid 1px #5b2d92;
+    padding: 10px 25px;
+    margin-top: 20px;
+    border-radius: 0px;
+    line-height: 15px;
+    box-shadow: 0 1px 6px #ccc;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+.userprofile-title-content .userprofile-edit-btn:focus{
+    outline: 0;
+}
+
+.attach-reume #resume-upload{
+    display: none;
+}
+.attach-reume .upload-btn{
+    position: relative;
+    width: auto;
+    background-color: #5c2d91;
+    color: #ffffff;
+    font-weight: 500;
+    border: solid 1px #5c2d91;
+    border-radius: 0px;
+    padding: 5px 35px 5px 10px;
+    white-space: pre-wrap;
+    /* overflow: hidden; */
+    text-align: left;
+    
+   
+}
+.attach-reume .upload-btn:focus{
+    outline: 0;
+}
+.attach-reume .upload-btn .download-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    font-size: 1.4rem;
+    padding: 7px 8px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 0;
+    box-shadow: none;
+}
+
+.attach-reume h3{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.attach-reume h3 span{
+    font-weight: 100;
+}
+.attach-reume h3 .download-btn {
+    border: 0;
+    box-shadow: none;
+    padding: 0px 10px;
+    border-radius: 0px;
+    color: #5b2d92;
+    background-color: transparent;
+    font-size: 1.7rem;
+    margin-left: 0px;
+}
+.attach-reume h3 .download-btn:focus{
+    outline: 0;
+}
+/*------ Education section -----*/
+.user-profile-box {
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 20px 30px;
+    /* border-top: solid 1px #ccc; */
+    box-shadow: 0px 0px 2px #999;
+    border-radius: 5px;
+}
+.user-profile-box .boxtitle{
+    position: relative;
+}
+.user-profile-box .boxtitle h3{
+    
+    /* border-bottom:solid  1px #ccc; */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.user-profile-box .boxtitle .add-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    background-color: #5b2d92;
+    padding: 3px 15px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 0px;
+    box-shadow: 1px 1px 5px #9a9a9a;
+
+}
+.user-profile-box .boxtitle .add-btn:focus{
+    outline: 0;
+}
+/* .user-educations h3 .educt-btn:after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 2px;
+    height: 20px;
+    background-color: #000;
+}
+.user-educations h3 .educt-btn::before{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+} */
+
+.user-profile-table .table-list{
+    position: relative;
+    padding: 0 0 10px 80px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #eee;
+}
+.table-list .table-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    background-color: #e2e2e2;
+}
+.table-list .table-img i{
+    font-size: 40px;
+    color: #54667a;
+}
+.table-list .table-details h4{
+    font-size: 1.45rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #54667a;
+}
+.table-list .table-details p{
+    font-size: 1.3rem;
+    margin-bottom: 0px;
+    color: #54667a;
+}
+/* .table-list .table-details p > span{
+    margin-right: 3px;
+} */
+.user-profile-table .table-list .btns {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: #e2e2e2;
+    color: #54667a;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 35%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+.user-profile-table .table-list .btns:focus{
+    outline: 0;
+}
+.user-profile-table .table-list .delete-btn{
+    right: 45px;
+}
+.user-profile-table .table-list:hover .btns{
+    opacity: 1;
+    visibility: visible;
+}
+.user-profile-table .skill-list{
+    padding-left: 0;
+}
+.skill-list .skill-sets{
+    padding: 0;
+}
+.skill-list .skill-sets li{
+    display: inline-block;
+    margin: 0 5px 5px 5px;
+    padding: 5px 15px;
+    color: #54667a;
+    font-size: 15px;
+    border: solid 1px rgb(204 204 204 / 33%);
+    border-radius: 25px;
+    background-color: rgb(204 204 204 / 33%);
+}
+.skill-list .skill-sets li:first-child{
+    margin-left: 0;
+}
+
+
+
+
+/* ---------------- Profile edite ---------------- */
+.profile-update-sec{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color:rgb(0 0 0 / 64%);
+    z-index: 999;
+}
+.profile-update-sec.active-edite{
+    display: block;
+}
+
+
+
+/* ------------- Alert message ------ */
+.delete-alert-message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 52%);
+}
+.delete-alert-message .inner-alert{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 250px;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 10px 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #999;
+}
+.delete-alert-message .inner-alert h2{
+    font-size: 20px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #ccc;
+}
+.delete-alert-message .inner-alert p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.delete-alert-message .inner-alert .btn{
+    padding: 5px 20px;
+    line-height: 16px;
+    margin-right: 10px;
+}

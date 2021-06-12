@@ -1,0 +1,75 @@
+<headernave *ngIf="userIsAuthenticated"></headernave>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="container page-container main" *ngIf="!isLoading">
+    <div class="row">
+        <!--------------------------- Side bar ------------------------------>
+        <div class="col-sm-3 w-230">
+            <sidebar></sidebar>
+        </div>
+        <!--------------------------- Side bar End------------------------------>
+
+        <div class="col-sm-9"> 
+            <div class="candidates-header">
+                <section class="page-sec-title">
+                    <div class="">
+                        <div class="page_title">
+                            <h2>A portal to connect <strong>Active Job Seeker</strong> with <strong>Recruiter</strong></h2>
+                            <p>Just apply and relax. Recruiter will contact you.</p>
+                            <ul class="template-list-nav">
+                                <li><a routerLink="/jobs">Looking for a Job?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="candidates-container">
+                <div class="profile-job-header">
+                    <h2>Job Seekers</h2>
+                </div>
+                
+                <div class="">
+                    <div class="row">
+                        <div class="col-sm-4 candidate-list" *ngFor="let users of getUsers; let i = index">
+                            <div class="card-container">
+                                <div class="bg-picture-sec">
+                                    <ng-container *ngFor="let bnr of getProfileBnr">
+                                        <div class="bg-picture" *ngIf="users.creator === bnr.creator" [style.backgroundImage]="'url('+ bnr.imagePath +')'">
+                                        </div>
+                                    </ng-container>
+                                </div>
+                                
+                                <ng-container *ngFor="let pict of getPicture">
+                                    <div class="picture" *ngIf="pict.creator === users.creator">
+                                        <img class="picture-img"  
+                                        [src]="pict.imagePath" alt="user"/>
+                                    </div>
+                                </ng-container>
+                                
+                                <div class="candidates-grid">
+                                    
+                                    <div class="profile-title-box">
+                                        <div class="candidate-title">
+                                            <h3>{{users.fName}} {{users.lName}}</h3>
+                                            <!-- <h6>New York</h6> -->
+                                            <h6>{{users.jobTitle}} at {{users.currentJob}}</h6>
+                                            <p>{{users.Objective}}</p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="view-cand-btn">
+                                        <button class="primary" [routerLink]="['/userprofiledetail', users.creator]">
+                                            View details
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

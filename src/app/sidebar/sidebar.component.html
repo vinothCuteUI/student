@@ -1,0 +1,19 @@
+<div class="sidebar">
+  <div class="side-user-details">
+    <div class="side-user-bnr">
+      <div class="side-inner-bnr" 
+      *ngIf="imagePreview !== '' && imagePreview" 
+      [style.backgroundImage]="'url('+ imagePreview +')'">
+      </div>
+    </div>
+      
+      <div class="side-user-picture">
+        <img [src]="pictureView" *ngIf="pictureView !== '' && pictureView">
+        <img src="../../assets/images/user-img.png" *ngIf="pictureId == undefined">
+      </div>
+      <div class="side-user-info">
+          <h2>{{userNmae}}</h2>
+          <p>{{jobandCompany}}</p>
+      </div>
+  </div>
+</div>

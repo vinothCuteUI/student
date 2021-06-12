@@ -1,0 +1,85 @@
+<header id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 logo"><a href="#"><img src="../../assets/images/logo.png" alt=""></a></div>
+      
+      <div class="col-md-9 user_log">
+        <div class="row">
+          <ul class="header_right_content pull-right">
+            <!-- <li class="search_bar">
+              <div class="search">
+                <input type="search" placeholder="Search..." id="header_search">
+                <span class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+              </div>
+            </li> -->
+            <li class="user_menu" id="user_btn">
+              <a href="#" class="user_id" (click)="userBtn($event)"> 
+                <span class="user_img">
+                    <img [src]="pictureView" *ngIf="pictureView !== '' && pictureView">
+                    <img src="../../assets/images/user-img.png" *ngIf="pictureId == undefined">
+                </span>
+                <span>User <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+              </a>
+              <div class="drop_user">
+                <div class="user_title" >
+                  <div class="user-picture">
+                    <img [src]="pictureView" *ngIf="pictureView !== '' && pictureView">
+                    <img src="../../assets/images/user-img.png" *ngIf="pictureId == undefined">
+                  </div>
+                  
+                  <div class="user_actions">
+                    <h4><span>{{userNmae}}</span></h4>
+                    <p>{{userEmail}}</p>
+                    <a  routerLink="/userprofile" id="view_profile_btn" >View Profile</a>
+                  </div>
+                  
+                </div>
+                <ul class="user_list clearfix">
+                  <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i> Inbox</a></li>
+                  <!-- <li><a href="#"><i class="fa fa-sliders" aria-hidden="true"></i> Account Setting</a></li> -->
+                  <li><button class="logout" (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <div class="pull-right">
+            <ul class="header_nav clearfix">
+              <li><a routerLink="/candidates"><i class="fa fa-id-card" aria-hidden="true"></i> Candidates</a></li>
+              <li><a routerLink="/jobs" ><i class="fa fa-suitcase" aria-hidden="true"></i> Jobs</a></li>
+              <!-- <li><a routerLink="/postjobs"><i class="fa fa-clipboard" aria-hidden="true"></i> Post Job</a></li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-comments" aria-hidden="true"></i>
+                  Messages
+                  <span id="msg_no">5</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-bell" aria-hidden="true"></i>
+                  Notifications
+                  <span id="notification_no">3</span>
+                </a>
+              </li> -->
+              <!-- <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li> -->
+            </ul>
+            <!-- <div class="header-menu-bar">
+              <ul class="menu-bar">
+                <li><a href="#">Post</a></li>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">Your Batchs</a></li>
+              </ul>
+            </div> -->
+          </div>
+          
+          
+           
+          
+        </div>
+        
+        
+      </div>
+    </div>
+    
+  </div>
+  

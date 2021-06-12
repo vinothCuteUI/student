@@ -1,0 +1,81 @@
+<section class="login-signup-section">
+    <div class="container-fluid padd-lt-rt-0">
+        <!-- <div class="col-md-6 padd-lt-rt-0 login-signup-img">
+          <img src="../../../assets/images/about_rt_img2.jpg" alt="">
+        </div> -->
+        <div class="create-forms">
+            <div class="add-details-form">
+                <div class="form-title">
+                    <h3>Create Your Profile</h3>
+                </div>
+                <form [formGroup]="form" (submit)="onCreateProfile()">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="firstname">First Name *</label>
+                                <input type="text" formControlName="fname" class="form-control" id="firstname" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="lastname">Last Name *</label>
+                                <input type="text" formControlName="lname" class="form-control" id="lastname" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="email">Email Id *</label>
+                                <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your valid email ID">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="contact">Contact No *</label>
+                                <input type="text" formControlName="contact" class="form-control" id="contact" placeholder="Enter your valid no.">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="jobtitle">Job Title *</label>
+                        <input type="text" formControlName="jobtitle" class="form-control" id="jobtitle" placeholder="Ex: Front end developer..">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Current working company </label>
+                        <input type="text" formControlName="company" class="form-control" id="company" placeholder="Ex: Accenture..">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Year of experience * </label>
+                        <input type="text" formControlName="experience" class="form-control" id="experience" placeholder="Enter as number...">
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="location">Location *</label>
+                                <input type="email" formControlName="location" class="form-control" id="location" placeholder="Enter your work location...">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="City">City *</label>
+                                <input type="text" formControlName="city" class="form-control" id="City" placeholder="Enter your City.">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="bbjective">Your Career Objective * </label>
+                        <textarea type="text" formControlName="objectives" class="form-control" id="bbjective"></textarea>
+                    </div>
+                    <div class="form-group profile-title-btn">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                       
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>

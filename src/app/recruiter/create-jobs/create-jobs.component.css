@@ -1,0 +1,178 @@
+@import url('../../../assets/recruiter/vendor/css/bootstrap-datetimepicker.min.css');
+/* @import url("../../../assets/recruiter/css/styles.css");
+@import url("../../../assets/recruiter/icofont/icofont.css"); */
+
+/* .main-inner-cont{
+    width: 33.33%;
+} */
+.btn{
+    padding: 7px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+}
+.btn:focus{
+    outline: 0;
+    box-shadow: none;
+}
+.btn:active{
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #0062cc;
+}
+.btn-primary{
+    background: #3267F0;
+}
+
+.breadcrumb>li+li:before{
+    content: ">";
+}
+.breadcrumb{
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: solid 1px #eee;
+    padding: 8px 0;
+}
+
+.title-dashbard{
+    position: relative;
+    border-bottom: solid 1px #eee;
+    margin: 0 0 20px 0px;
+    padding: 0 0 18px 0;
+}
+.title-dashbard h2{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.title-dashbard .create-job-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #3267f1;
+    text-decoration: none;
+    color: #fff;
+    padding: 7px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+}
+.create-jobs-form{
+    padding-bottom: 30px;
+}
+.create-jobs-form .form-group label{
+    color: #414141;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+.create-jobs-form .form-group .form-control{
+    border-radius: 25px;
+    padding: 10px 15px;
+    height: 40px;
+    font-size: 14px;
+    border-color: #b1b2c4;
+    background: #fff;
+}
+.create-jobs-form .form-group .form-check label{
+    margin-bottom: 0;
+    line-height: 22px;
+    font-weight: 300;
+}
+.create-jobs-form .form-group .radio-inline label, .create-jobs-form .form-group .checkbox-inline label{
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    line-height: 23px;
+}
+.create-jobs-form .form-group textarea.form-control{
+    height: 150px;
+    resize: none;
+    border-radius: 15px;
+}
+.valid-feedback{
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #28a745;
+}
+.dt-txt{
+    color: #414141;
+    font-size: 13px;
+    margin-top: 5px;
+    text-align: right;
+}
+.form-group p{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    color: red;
+}
+.input-group{
+    width: 100%;
+}
+
+
+
+#myModal{
+    padding: 0 !important;
+    background-color: rgb(0 0 0 / 20%);
+}
+#myModal .modal-dialog{
+    width: 300px;
+    margin: 20% auto;
+}
+.update-msg{
+    color: green;
+    font-size: 1.4rem;
+    margin-left: 20px;
+}
+#myModal .modal-dialog{
+    margin: 10% auto;
+}
+.modal-header{
+    padding: 10px 15px;
+    border-bottom: 0;
+    background-color: #5b2d90;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.modal-header .modal-title{
+    font-size: 1.4rem;
+}
+.modal-footer{
+    border: none;
+}
+.modal-footer .btn{
+    border: solid 1px #ccc;
+    color: #222;
+}
+
+
+.mat-form-field-prefix, .mat-form-field-suffix{
+    position: absolute;
+    top: 16px;
+    right: 5px;
+    z-index: 3;
+}
+.mat-datepicker-toggle{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 3;
+}
+.mat-form-field-flex{
+    display: none;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+    display: none;
+}
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button{
+    width: 35px;
+    height: 35px;
+    line-height: 33px;
+}
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button span{
+    font-size: 30px;
+}

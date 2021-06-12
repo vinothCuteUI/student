@@ -1,0 +1,175 @@
+<headernave *ngIf="userIsAuthenticated"></headernave>
+<div class="container profile-main main" >
+    <div class="userprofile-section">
+        <div class="row">
+
+            <!--------------------------- Side bar ------------------------------>
+            <div class="col-sm-3 w-230">
+                <sidebar></sidebar>
+            </div>
+            <!--------------------------- Side bar End------------------------------>
+
+            <div class="col-sm-9">
+                <div class="userprofile-container">
+
+                    <!-- Profile header Start -->
+                    <div class="userprofile-header">
+
+                        <!-- Profile banner start -->
+                        <div class="userprofile-banner">
+                            <div class="inner-bg" 
+                            *ngIf="imagePreview !== '' && imagePreview" [style.backgroundImage]="'url('+ imagePreview +')'"></div>
+                            
+                        </div>
+                        <!-- Profile banner End -->
+
+                        <!-- Profile title start -->
+                        <div class="userprofile-title" >
+                            <div class="userprofile-picture">
+                                <div class="picture-temp" *ngIf="pictureId == undefined">
+                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                </div>
+                                <img class="profile-picture" 
+                                [src]="pictureView" 
+                                alt="" *ngIf="pictureView !== '' && pictureView" >
+                                
+                            </div>
+                            <div class="userprofile-title-details" >
+                                <ng-container *ngFor="let userProlife of getProfile">
+                                    <div class="user-title-info">
+                                        <h2><span>{{userProlife.fName}}</span> &nbsp;<span>{{userProlife.lName}}</span></h2>
+                                        <h3><span>{{userProlife.jobTitle}}</span> at <span>{{userProlife.currentJob}}</span></h3>
+                                        <p>
+                                            <span class="expr-spn">Experience: <span>{{userProlife.experience}}</span> Yrs</span> |
+                                            <span class="loca-spn"><i class="fa fa-map-marker" aria-hidden="true"></i> <span>{{userProlife.location}}</span> &nbsp; <span>{{userProlife.city}}</span></span> 
+                                        </p>
+                                        
+                                    </div>
+                                    <div class="userprofile-contact-info">
+                                        <ul>
+                                            <li class="email-id"><i class="fa fa-envelope" aria-hidden="true"></i>: <span>{{userProlife.email}}</span></li>
+                                            <li class="mobile-no"><i class="fa fa-mobile" aria-hidden="true"></i>: <span>{{userProlife.contact}}</span></li>
+                                        </ul>
+                                    </div>
+                                </ng-container>
+                                
+                            </div>
+                        </div>
+                        <!-- Profile title end -->
+                    </div>
+                    <!-- Profile header end -->
+
+                    <!-- Profile title content stat-->
+                    <div class="userprofile-title-content" >
+                        <ng-container *ngFor="let userProlife of getProfile">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <p>{{userProlife.Objective}}</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="attach-reume">
+                                        <h3>Profile Resume: <span *ngIf="resumeId == undefined">Resume not attached</span></h3>
+                                        <div class="upload-docs" *ngIf="resumeId !== undefined" >
+                                            <div class="btn btn-primary upload-btn" (click)="downloadResume(resumeUrl, resumePreview)">
+                                                <span>Download Resume </span>   
+                                                <button class="download-btn btn">
+                                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+        
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </ng-container>
+                       
+                    </div>
+                    <!-- Profile title content end-->
+                    
+                    <!-- Profile educations start-->
+                    <div class="user-profile-box">
+                        <div class="boxtitle">
+                            <h3>Educations</h3>
+                           
+                        </div>
+                        
+                        <div class="user-profile-table">
+                            <ng-template [ngIf]="getEducatios.length > 0">
+                                <div class="table-list" *ngFor="let education of getEducatios" >
+                                    <div class="table-img">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="table-details">
+                                        <h4>{{education.schools}}</h4>
+                                        <p>{{education.degree}} </p>
+                                        <p>{{education.feildOfStds}} </p>
+                                        <p><span>{{education.stYear}}</span> - <span>{{education.endYear}}</span></p>
+                                    </div>
+                                    
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                    <!-- Profile educations end-->
+
+                    <!-- Profile experince start-->
+                    <div class="user-profile-box">
+                        <div class="boxtitle">
+                            <h3>Experience </h3>
+                            
+                        </div>
+                    <div class="user-profile-table">
+                        <div class="table-list" *ngFor="let experience of getExperience">
+                            <div class="table-img"><i class="fa fa-building" aria-hidden="true"></i></div>
+                            <div class="table-details">
+                                <h4>{{experience.jobrole}}</h4>
+                                <p><span>{{experience.company}} </span> - <span>{{experience.employment}}</span> </p>
+                                <ng-template [ngIf]="experience.currentStatus == 'Present'">
+                                    <p>
+                                        <span>{{experience.stMonth}} </span><span>{{experience.stYear}}</span>- 
+                                        <span>Present</span>
+                                    </p>
+                                </ng-template>
+                                <ng-template [ngIf]="experience.currentStatus !== 'Present'">
+                                    <p>
+                                        <span>{{experience.stMonth}} </span> <span>{{experience.stYear}} </span>- 
+                                        <span>{{experience.endMonth}} </span> <span>{{experience.endYear}} </span>
+                                    </p>
+                                </ng-template>
+                                
+                                <p>{{experience.location}}</p>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Profile experince end-->
+
+                    <!-- Profile experince start-->
+                    <div class="user-profile-box">
+                        <div class="boxtitle">
+                            <h3>Skills & endorsements </h3>
+                        </div>
+                        
+                        <div class="user-profile-table">
+                            
+                        <div class="table-list skill-list">
+                            <ul class="skill-sets" *ngFor="let skillset of getSkillData">
+                                <li *ngFor="let skills of skillset.skillSet">{{skills}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Profile experince end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

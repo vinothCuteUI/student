@@ -1,0 +1,105 @@
+<!-- Education  edite -->
+<div class="profile-update-sec " [class.active-education-edite]="isActiveEducation">
+    
+    <div class="edite-profile-title">
+        <h3>Education </h3>
+        <button class="btn close-btn" (click)="CloseEducate()">X</button>
+        
+        <form [formGroup]="form">
+            
+            <!-- <input id="educId" type="text" formControlName="educationid"  [value]="educDataById[0]?.id"> -->
+            <div class="form-group">
+                <label for="colleage">Colleage *</label>
+                <input type="text" 
+                formControlName="school" 
+                class="form-control" id="colleage" 
+                placeholder="Ex: Anna univercity...">
+            </div>
+            <div class="form-group">
+                <label for="degree">Degree *</label>
+                <input type="text" formControlName="degree" 
+                class="form-control" id="degree" placeholder="Ex: Bsc">
+            </div>
+            <div class="form-group">
+                <label for="field">Field of study *</label>
+                <input type="text" formControlName="fieldofstd" 
+                class="form-control" id="field" placeholder="Ex: Computer science">
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="start">Start Year *</label>
+                        <select name="" id="" formControlName="styear" 
+                        class="form-control">
+                            <option value="null"></option>
+                            <option value="2000">2000</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="start">End Year *</label>
+                        <select name="" id="" formControlName="endyear" 
+                        class="form-control">
+                            <option value="null"></option>
+                            <option value="2000">2000</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="bbjective">Objective * </label>
+                <textarea type="text" class="form-control" id="bbjective"></textarea>
+            </div> -->
+            <div class="form-group profile-title-btn">
+                <button class="btn btn-primary" (click)="onAddEducation()" *ngIf="educationMode == 'create'">Save</button>
+                <button class="btn btn-primary" (click)="onEditeEducation()" *ngIf="educationMode == 'edite'">Update</button>
+                
+            </div>
+        </form>
+    </div>
+
+</div>

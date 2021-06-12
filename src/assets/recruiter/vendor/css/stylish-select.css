@@ -1,0 +1,157 @@
+/* CORE STYLES */
+
+.stylish-select-container {
+    position: relative;
+}
+
+.stylish-select-container:hover {
+    cursor: pointer;
+}
+
+.stylish-select-container,
+.stylish-select-container>select {
+    max-width: 100%;
+}
+
+.stylish-select-container>.stylish-select-selected {
+    padding: 8px 10px;
+    background-color: #fff;
+    background-position: right .75rem center;
+    background-size: 13px 26px;
+    background-repeat: no-repeat;
+    position: relative;
+    border: 1px solid #b1b2c4;
+}
+
+.stylish-select-container>.stylish-select-list {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-y: auto;
+    white-space: nowrap;
+    top: 40px;
+}
+
+.stylish-select-container>.stylish-select-list>li {
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+.stylish-select-container>.stylish-select-selected,
+.stylish-select-container>.stylish-select-list li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.stylish-select-container[data-select-width='auto']>.stylish-select-selected {
+    display: inline-block;
+}
+
+.stylish-select-container[data-select-dropdown-width='auto'] {
+    display: inline-block;
+}
+
+.stylish-select-container[data-select-dropdown-width='auto']>.stylish-select-selected {
+    padding-right: 40px;
+}
+
+.stylish-select-container[data-select-dropdown-width='auto']>.stylish-select-dropdown-sizer {
+    position: absolute;
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.stylish-select-container[data-select-dropdown-width='auto']>.stylish-select-dropdown-sizer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* ------------------------------ */
+
+
+/* SETTINGS */
+
+.stylish-select-container>.stylish-select-list {
+    max-height: 160px;
+}
+
+
+/* 4 items shown at 40px line-height */
+
+
+/* ------------------------------ */
+
+
+/* Theme: Modern */
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-selected {
+    border-radius: 25px;
+    color: #555;
+    background-size: 15px 30px;
+    padding: 7px 15px;
+    position: relative;
+    height: 40px;
+}
+.stylish-select-container[data-select-theme='modern']>.stylish-select-selected:after{
+	    content: "";
+    position: absolute;
+    right: 25px;
+    top: 12px;
+    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+    font-size: 14px;
+    z-index: 999;
+    width: 12px;
+    height: 15px;
+}
+
+.stylish-select-container[data-select-theme='modern'][data-select-state='open']>.stylish-select-selected {
+    box-shadow: none;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list {
+    background-color: #fff;
+    color: #000;
+    border:1px solid #b1b2c4;
+    backdrop-filter: blur(3px);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list>li {
+    transition: all 0.50s;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list>li:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+    color: #000;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list::-webkit-scrollbar {
+    background-color: #ddd;
+    width: 10px;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+}
+
+.stylish-select-container[data-select-theme='modern']>.stylish-select-list::-webkit-scrollbar-button {
+    display: none;
+}
+
+.highlighted {}
+
+
+/* ------------------------------ */

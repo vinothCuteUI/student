@@ -1,0 +1,95 @@
+
+<!-- Profile Title edite -->
+<div class="profile-update-sec " [class.active-profile-title]="editeProfile">
+    
+    <div class="edite-profile-title">
+        <h3>Profile title</h3>
+        <button class="btn close-btn" (click)="CloseEditProfileTit()">X</button>
+        <form [formGroup]="profileForm">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="firstname">First Name *</label>
+                        <input type="text" class="form-control" 
+                        formControlName="fname" 
+                        id="firstname" >
+                        <p *ngIf="profileForm.get('fname').invalid  && (profileForm.get('fname').dirty || profileForm.get('fname').touched)">Please enter first name...</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="lastname">Last Name *</label>
+                        <input type="text" class="form-control" formControlName="lname" id="lastname" >
+                        <p *ngIf="profileForm.get('lname').invalid  && (profileForm.get('lname').dirty || profileForm.get('lname').touched)">Please enter last name...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="email">Email Id *</label>
+                        <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your valid email ID">
+                        <p *ngIf="profileForm.get('email').invalid  && (profileForm.get('email').dirty || profileForm.get('email').touched)">Please enter Email ID...</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="contact">Contact No *</label>
+                        <input type="text" class="form-control" formControlName="contact" id="contact" placeholder="Enter your valid no.">
+                        <p *ngIf="profileForm.get('contact').invalid  && (profileForm.get('contact').dirty || profileForm.get('contact').touched)">Please enter valid mobile number</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="jobtitle">Job Title *</label>
+                <input type="text" class="form-control" formControlName="jobtitle" id="jobtitle" placeholder="Ex: Front end developer..etc">
+                <p *ngIf="profileForm.get('jobtitle').invalid  && (profileForm.get('jobtitle').dirty || profileForm.get('jobtitle').touched)">Please enter job title</p>
+                
+            </div>
+            <div class="form-group">
+                <label for="company">Current working company </label>
+                <input type="text" class="form-control" formControlName="company" id="company" placeholder="Ex: Accenture..etc">
+                <p *ngIf="profileForm.get('company').invalid  && (profileForm.get('company').dirty || profileForm.get('company').touched)">Please enter company name</p>
+                
+            </div>
+            <div class="form-group">
+                <label for="experience">Year of experience * </label>
+                <input type="text" class="form-control" formControlName="experience" id="experience" placeholder="Enter as number...">
+                <p *ngIf="profileForm.get('experience').invalid  && (profileForm.get('experience').dirty || profileForm.get('experience').touched)">Please enter your experience</p>
+                
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input type="email" class="form-control" formControlName="location" id="location" placeholder="Enter your work location...">
+                        <p *ngIf="profileForm.get('location').invalid  && (profileForm.get('location').dirty || profileForm.get('location').touched)">Please enter your location</p>
+                        
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="City">City *</label>
+                        <input type="text" class="form-control" formControlName="city" id="City" placeholder="Enter your City.">
+                        <p *ngIf="profileForm.get('city').invalid  && (profileForm.get('city').dirty || profileForm.get('city').touched)">Please enter your city</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bbjective">Objective * </label>
+                <textarea type="text" class="form-control" formControlName="objectives" id="objectives"></textarea>
+                <p *ngIf="profileForm.get('objectives').invalid  && (profileForm.get('objectives').dirty || profileForm.get('objectives').touched)">Please enter objectives</p>
+                
+            </div>
+            <div class="form-group profile-title-btn">
+                <button class="btn btn-primary" (click)="onEditeProfile()">Save</button>
+            </div>
+        </form>
+    </div>
+
+</div>

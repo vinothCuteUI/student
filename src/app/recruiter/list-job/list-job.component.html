@@ -1,0 +1,48 @@
+<div class="job-list">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">List jobs</li>
+        </ol>
+    </nav>
+    <div class="title-dashbard">
+        <h2>List Jobs</h2>
+        <button (click)="createJobs()" class="btn btn-primary create-job-btn">Create Post</button>
+    </div>
+    <div class="job-list-table">
+        <table class="table table-striped">
+            <thead>
+              <tr >
+                <th>S.No</th>
+                <th>Job Title</th>
+                <th>Primary Skills</th>
+                <th>Vacancy</th>
+                <th>Offered</th>
+                <th>Action</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let posts of getPostJobs; let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{posts.jobTitle}}</td>
+                <td>{{posts.primarySkills}}</td>
+                <td>10</td>
+                <td>2</td>
+                <td class="list-job-action">
+                    <button class="edit-job" (click)="onEditJob(posts.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <button class="delete-job"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </td>
+                <td class="job_status">
+                  <span class="pending" *ngIf="posts.jobStatus == 'Pending'" >{{posts.jobStatus}}</span>
+                  <span class="approved" *ngIf="posts.jobStatus == 'Approved'">{{posts.jobStatus}}</span>
+                  
+                </td>
+              </tr>
+            </tbody>
+            
+                
+            
+          </table>
+    </div>
+</div>
